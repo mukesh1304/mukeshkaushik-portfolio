@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="icon" href="image/favicon.ico" type="image/x-icon">
+  <style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('image/background.jpeg') no-repeat center center fixed; 
+    background-size: cover;
+    color: #111827;
+  }
+  
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #0d0d0d;
+      color: #fdfcfc;
+      box-shadow: 0 2px 10px rgba(5, 5, 5, 0.1);
+      z-index: 1000;
+      padding: 10px 0;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 600;
+      color: #5fecf0;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      color: #FFD700;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: #2563eb;
+    }
+
+    .hero {
+      height: 85vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: url('download.jpeg');
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: rgb(255, 255, 255);
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .btn-primary {
+      padding: 12px 24px;
+      font-size: 1.1rem;
+      color: #001aff;
+      background: #ffffff;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: #e0f2fe;
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    #social-title h2 {
+      font-size: 2rem; /* Adjust the font size as needed */
+      color: #ffffff; /* Change the text color */
+      text-align: center; /* Center-align the text */
+      margin: 20px 0; /* Add space around the heading */
+    }
+    
+    #sociallinks {
+      /* Your existing styles for the connect section */
+    }
+    
+    #sociallinks {
+      text-align: center;
+      padding: 4px 0; /* Added padding */
+      background-color: #f9fafb;
+      width: 30%;
+      margin: 20px auto; /* Added margin */
+      border-radius: 8px;
+      margin-top: -60px; /* Added space at the top */
+    }
+   
+    
+    
+    #sociallinks a {
+      margin: 0 30px;
+    }
+    
+    #sociallinks img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s ease;
+    }
+    
+    #sociallinks img:hover {
+      transform: scale(1.1); /* Add a hover effect for better interactivity */
+    }
+    
+
+    #about, #contact {
+      text-align: center;
+    }
+
+    #about img {
+      width: 250px;
+      height: auto;
+      border-radius: 50%; 
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(238, 233, 233, 0.1);
+    }
+
+    #about h2, #contact h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #e0f2fe;
+    }
+
+    #about p {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      color: #e2d6d6;
+    }
+
+    #projects {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #fcfdfd00;
+    }
+    
+    #projects h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #e0f2fe;
+    }
+    
+    .projects-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .project-card {
+      background-color: #f6f6f62b;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgb(255, 255, 255);
+      width: 280px;
+      padding: 20px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 400px;
+    }
+    
+    .project-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    
+    .project-card h3 {
+      margin-top: 15px;
+      font-size: 1.6rem;
+      color: #ffffff
+    }
+    
+    .project-card p {
+      font-size: 1rem;
+      color: #ffffff;
+    }
+    .project-button {
+      align-self: center; 
+      padding: 10px 20px;
+      margin-top: auto; 
+      background-color: #007BFF;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    
+    .project-button:hover {
+      background-color: #0056b3;
+    }
+    
+    #skills {
+      text-align: center;
+    }
+    #skills h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #e0f2fe;
+    }
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .skill {
+      width: 200px;
+      text-align: left;
+    }
+
+    .skill p {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #e0f2fe;
+    }
+
+    .skill-bar {
+      background: #e5e7eb;
+      height: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      background: #2563eb;
+    }
+
+    #resume {
+      max-width: 600px;
+      max-height: 200px;
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #f9fafb00;
+      color: #111827;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-top: 40px;
+    }
+    
+    #resume h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+    
+    #resume p {
+      font-size: 1.2rem;
+      color: #ffffff;
+    }
+    
+    iframe {
+      margin-top: 1px;
+      border-radius: 8px;
+    }
+    
+    #contact {
+      max-width: 600px;
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #f9fafb32;
+      color: #111827;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-top: 40px;
+    }
+  
+    #contact h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+  
+    #contact p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+  
+    #contact form {
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      text-align: left;
+    }
+  
+    #contact form label {
+      font-weight: bold;
+      color: #111827;
+      margin-bottom: 5px;
+    }
+  
+    #contact form input,
+    #contact form textarea {
+      padding: 12px;
+      font-size: 1rem;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  
+    #contact form input:focus,
+    #contact form textarea:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 4px rgba(37, 99, 235, 0.4);
+    }
+  
+    #contact form button {
+      padding: 12px;
+      font-size: 1rem;
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+  
+    #contact form button:hover {
+      background-color: #1e40af;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      background: #1f2937;
+      color: #9ca3af;
+    }
+
+    footer a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <a href="#" class="logo">Mukesh Kaushik</a>
+      <ul class="nav-links">
+        <li><a href="#social-title">Connect</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Hello, I'm MUKESH KAUSHIK</h1>
+    <p>A Web Developer passionate about building elegant and responsive websites.</p>
+    <a href="#about" class="btn-primary">Learn More</a>
+  </section>
+
+  <section id="social-title">
+    <h2>Connect</h2>
+  </section>
+
+  <!--Connect Section -->
+  <section id="sociallinks">
+  <a href="https://www.linkedin.com/in/mukesh-kaushik-964a1b191/" target="_blank">
+    <img src="image/linkedin-icon.png" alt="LinkedIn">
+  </a>
+  <a href="https://github.com/mukesh1304" target="_blank">
+    <img src="image/github-icon.png" alt="GitHub">
+  </a>
+  <a href="https://www.instagram.com/mukesh.kaushik.?igsh=ZnZybDBseTI5ZTR2" target="_blank">
+    <img src="image/instagram-icon.png" alt="Instagram">
+  </a>
+</section>
+
+
+
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <img src="image/mypic.png" alt="Profile Picture">
+    <p>
+    Hello! I’m Mukesh Kaushik, a passionate and driven B.Tech student currently in my 5th semester at 
+    Rungta College of Engineering and Technology. I specialize in Data Structures and Algorithms, Java,
+     Python, and DBMS, and I’m always excited to learn new technologies.
+    Alongside my academics, I work on various projects that allow me to apply my skills in real-world 
+    scenarios. From building solutions like the CSVTU PYQ Website to DropGuard, a tool designed to track 
+    student dropout rates, I am dedicated to creating practical applications that solve real problems.
+    In my free time, I enjoy exploring new technologies, coding, and contributing to open-source projects.
+     My ultimate goal is to create meaningful software solutions that impact people's lives positively.
+    </p>
+  </section>
+
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>My Skills</h2>
+    <div class="skills-container">
+      <div class="skill">
+        <p>HTML</p>
+        <div class="skill-bar"><div class="progress" style="width: 90%;"></div></div>
+      </div>
+      <div class="skill">
+        <p>CSS</p>
+        <div class="skill-bar"><div class="progress" style="width: 80%;"></div></div>
+      </div>
+      <div class="skill">
+        <p>JavaScript</p>
+        <div class="skill-bar"><div class="progress" style="width: 75%;"></div></div>
+      </div>
+      <div class="skill">
+        <p>DBMS</p>
+        <div class="skill-bar"><div class="progress" style="width: 85%"></div></div>
+      </div>
+      <div class="skill">
+        <p>DSA</p>
+        <div class="skill-bar"><div class="progress" style="width: 65%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+  <h2>Projects</h2>
+  <div class="projects-container">
+    <div class="project-card">
+      <img src="image/csvtu-pyq.png" alt="CSVTU PYQ Website">
+      <h3>CSVTU-PYQ Website</h3>
+      <p>The CSVTU PYQ Website provides students with easy access to Previous Year Question Papers (PYQs) 
+      for all CSVTU courses and semesters.</p>
+      <a href="https://csvtu-questionbank.netlify.app/" class="project-button">Visit</a>
+    </div>
+      <div class="project-card">
+        <img src="image/dropgurd.png" alt="DropGuard">
+        <h3>DropGuard</h3>
+        <p>DropGuard helps educational institutions track and manage student dropout rates. By analyzing 
+        factors like attendance and performance, it identifies at-risk students and enables early intervention
+         to improve retention and academic success.</p>
+      </div>
+      <div class="project-card">
+        <img src="image/parking.png" alt="Parking Management System">
+        <h3>Parking System</h3>
+        <p>The Parking Management System is a user-friendly web application designed to streamline the process
+         of parking space allocation and management. It allows users to easily find available parking spots, 
+         make reservations, and pay for parking services. </p>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Add Resume Section -->
+  <section id="resume" style="margin-top: 100px; padding-top: 50px; text-align: center;">
+    <h2>My Resume</h2>
+    <p>You can view or download my resume below:</p>
+    <a href="https://drive.google.com/file/d/11aqrVILgKYhAvPgSwrnOUdBhgM60QhC6/view?usp=drive_link" class="btn-primary" download>Download Resume</a>
+    <br><br>
+   
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>If you have any questions or just want to say hi, feel free to reach out!</p>
+    <form action="https://formsubmit.co/kaushikm892@gmail.com" method="POST">
+      <!-- Add necessary hidden fields for FormSubmit -->
+      <input type="hidden" name="_subject" value="New message from your portfolio site">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="box">
+      
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+      
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+      
+      <button type="submit">Send</button>
+    </form>
+  </section>
+  
+
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 My Portfolio. Built with ❤️ by <a href="#">Mukesh Kaushik</a>.</p>
+  </footer>
+</body>
+</html>
